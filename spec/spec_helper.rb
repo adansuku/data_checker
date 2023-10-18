@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "data_checker"
+require "data_checker/data_checker"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

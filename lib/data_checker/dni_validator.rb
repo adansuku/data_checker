@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "data_checker/version"
+require_relative 'version'
 
 module DataChecker
-  class << self
-  def valid?(dni)
+  class DniValidator
+    def self.valid?(dni)
       dni_format = /^[0-9]{8}[A-Z]$/i
 
       if dni.match?(dni_format)
@@ -12,16 +12,16 @@ module DataChecker
         letter_part = dni[8].upcase
 
         # Allowed letters
-        control_letters = "TRWAGMYFPDXBNJZSQVHLCKE".chars
+        control_letters = 'TRWAGMYFPDXBNJZSQVHLCKE'.chars
 
         # Calculate the letter
         expected_letter = control_letters[number_part % 23]
 
-        # Check if s ok
+        # Check if it's ok
         return expected_letter == letter_part
       end
 
-      false  # Retorna falso si el formato no es válido
+      false  # Retorna false si el formato no es válido
     end
   end
 end
