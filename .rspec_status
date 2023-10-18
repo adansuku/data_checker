@@ -1,0 +1,4 @@
+example_id                           | status | run_time        |
+------------------------------------ | ------ | --------------- |
+./spec/data_checker_spec.rb[1:1:1:1] | passed | 0.00179 seconds |
+./spec/data_checker_spec.rb[1:1:2:1] | passed | 0.00005 seconds |
