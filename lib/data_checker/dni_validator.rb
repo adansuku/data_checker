@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'version'
+require_relative "version"
 
 module DataChecker
   class DniValidator
@@ -12,7 +12,7 @@ module DataChecker
         letter_part = dni[8].upcase
 
         # Allowed letters
-        control_letters = 'TRWAGMYFPDXBNJZSQVHLCKE'.chars
+        control_letters = "TRWAGMYFPDXBNJZSQVHLCKE".chars
 
         # Calculate the letter
         expected_letter = control_letters[number_part % 23]

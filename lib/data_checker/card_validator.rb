@@ -1,10 +1,10 @@
 # card_validator.rb
 
-module CardValidator
-  class Visa
+module DataChecker
+  class CardValidator
     def self.valid?(card_number)
       # Remove whitespace and dashes
-      card_number = card_number.gsub(/\s+|-/, '')
+      card_number = card_number.gsub(/\s+|-/, "")
 
       # Check that the card number contains only digits
       return false unless card_number.match?(/^\d+$/)
@@ -20,7 +20,7 @@ module CardValidator
       digits.each_with_index do |digit, index|
         if index.odd?
           doubled_digit = digit * 2
-          sum += (doubled_digit > 9) ? doubled_digit - 9 : doubled_digit
+          sum += doubled_digit > 9 ? doubled_digit - 9 : doubled_digit
         else
           sum += digit
         end
